@@ -1,0 +1,19 @@
+# Node / Vite
+node_modules
+dist
+*.log
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# Env
+.env
+.env.*
+!.env.example
+
+# OS/Editors
+.DS_Store
+*.swp
+.idea
+.vscode/*
+!.vscode/extensions.json

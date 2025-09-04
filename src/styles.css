@@ -1,0 +1,144 @@
+:root{
+  --bg-1:#5b2be1; --bg-2:#2f80ed;
+  --text:#0f172a; --text-soft:#475569;
+  --card:#ffffff; --muted:#f1f5f9;
+  --ring:#93c5fd; --accent:#2563eb; --accent-2:#1d4ed8;
+  --danger:#ef4444; --ok:#16a34a;
+  --radius:16px; --shadow:0 10px 30px rgba(2,6,23,.10);
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{margin:0;font:16px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;color:var(--text);
+  background:linear-gradient(135deg,var(--bg-1),var(--bg-2)) fixed;}
+.app-shell{min-height:100%}
+.container{max-width:960px;margin:0 auto;padding:24px}
+
+/* NAV */
+.nav{position:sticky;top:0;-webkit-backdrop-filter:saturate(1.4) blur(8px);backdrop-filter:saturate(1.4) blur(8px);
+  background:rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.25);z-index:5}
+.nav-inner{max-width:960px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:10px;align-items:center;color:#fff;text-decoration:none;font-weight:800}
+.brand-dot{width:10px;height:10px;border-radius:999px;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.35) inset}
+.nav a{color:#fff;text-decoration:none;opacity:.9}
+.nav a:hover{opacity:1}
+
+/* CARDS */
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+.card + .card{margin-top:16px}
+.card h2{margin:0 0 10px 0;font-size:22px}
+.muted{color:var(--text-soft)}
+.section-title{color:#fff;font-size:28px;font-weight:800;margin:28px 0 12px}
+
+/* FORM */
+.field{display:grid;gap:8px;margin:12px 0}
+.label{font-size:14px;color:var(--text-soft)}
+.input,.select,.textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #e5e7eb;background:#fff;color:var(--text);outline:0;transition:box-shadow .15s,border-color .15s}
+.textarea{min-height:120px;resize:vertical}
+.input:focus,.select:focus,.textarea:focus{border-color:var(--ring);box-shadow:0 0 0 4px rgba(147,197,253,.35)}
+
+/* BUTTONS */
+.btn{appearance:none;border:0;cursor:pointer;border-radius:12px;padding:10px 14px;font-weight:600;box-shadow:var(--shadow);background:var(--muted)}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-light{background:#fff}
+
+/* UTILS */
+.stack{display:grid;gap:14px}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.chip{padding:4px 10px;border-radius:999px;background:var(--muted);color:var(--text-soft);font-size:12px}
+.chip.ok{background:rgba(22,163,74,.12);color:var(--ok)}
+.chip.bad{background:rgba(239,68,68,.12);color:var(--danger)}
+.kbd{font:12px/1.1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:2px 6px;border-radius:6px;background:#0f172a;color:#fff}
+
+/* Top bar container */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(90deg, #7c3aed, #3b82f6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+/* Inner layout: brand left, nav right */
+.topbar__container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+}
+.brand__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+/* Nav list + spacing between items */
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 28px;              /* 👈 spacing between links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Links */
+.nav__list a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.nav__list a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Logout button styled like a link */
+.nav__button {
+  background: none;
+  border: 0;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+.nav__button:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* “Sign Up” pill */
+.nav__cta {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+.nav__cta:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Small screens tweaks */
+@media (max-width: 640px) {
+  .nav__list { gap: 16px; font-size: 14px; }
+  .brand { font-size: 18px; }
+}
